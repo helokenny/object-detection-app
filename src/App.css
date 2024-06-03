@@ -1,5 +1,10 @@
-.App {
-  text-align: center;
+html, body, button {
+  font-family: "DM Sans", sans-serif;
+}
+
+body {
+  color: #000000;
+  background-color: #F8F9FB;
 }
 
 .App-logo {
@@ -7,32 +12,215 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+  font-size: 14px;
+  line-height: 18.23px;
+  font-weight: 400;
+  color: #FFFFFF;
+  background-color: #755AE2;
+  border: none;
+  border-radius: 8px;
+  height: 44px;
+  cursor: pointer;
+}
+button:disabled {
+  background-color: #b2adc6;
+  cursor: default;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.page {
+  padding: 36px 48px;
+  max-width: 832px;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 20px;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+}
+
+.page .header {
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.page .paragraph {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  margin-bottom: 40px;
+  color: #4A4A68;
+}
+
+.detection-area {
+  display: flex;
+  gap: 43px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.detecting-boxes {
+  display: grid;
+  grid-template-columns: 91px 91px;
+  grid-template-rows: 71px 71px;
+  gap: 16px;
+}
+
+.detecting-box {
+  position: relative;
+
+  background-color: #F5F3FF;
+  color: #4A4A68;
+  padding: 10;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 13.02px;
+  letter-spacing: -0.24px;  
 }
 
-.App-link {
-  color: #61dafb;
+.detecting-box-circle {
+  width: 35px;
+  height: 35px;
+  margin-bottom: 5px;
+  background-color: #E6E0FF;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+.double-circle .detecting-box-circle {
+  border: solid 2px #755ae2;
+  background-color: transparent;
+}
+.error.double-circle .detecting-box-circle {
+  border: solid 2px #FF5F56;
+}
+.detecting-box-circle-inner {
+  width: 28.5px;
+  height: 28.5px;
+  background-color: #755AE2;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.error .detecting-box-circle-inner {
+  background-color:#FF5F561A;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.detecting-box-indicator {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+
+  width: 16px;
+  height: 16px;
+  background-color: #755AE2;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+.error .detecting-box-indicator {
+  background-color: #FF5F56;
+}
+
+.detecting-box-indicator img {
+  filter: brightness(5);
+  width: 8px;
+}
+
+.submit-btn {
+  width: 207px;
+}
+
+.modal-bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #00000061;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-box {
+  max-width: 472px;
+}
+.modal-header {
+  height: 64px;
+  background-color: #755AE2;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 34px;
+  padding-right: 24px;
+  border-radius: 18px 18px 0 0 ;
+}
+.modal-header span {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 23px;
+  letter-spacing: -0.24px;
+}
+.modal-main {
+  background-color: #F5F3FF;
+  color: #675E8B;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 34px 65px 50px;
+  text-align: center;
+}
+.modal-main .title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 23px;
+  letter-spacing: -0.24px;
+  color: #755AE2;
+}
+.modal-main .paragraph {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.23px;
+  letter-spacing: -0.24px;
+  text-align: center;
+  color: #675E8B;
+}
+.modal-footer {
+  height: 81px;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-left: 34px;
+  padding-right: 24px;
+  border-radius: 0 0 18px 18px;
+}
+.modal-submit-btn {
+  width: 140px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20.83px;
+}
+.modal-close-btn {
+  width: 75px;
+  height: 32px;
+  /* font-family: Nunito; */
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16.37px;
+  background-color: #F5F3FF33;
+}
+
