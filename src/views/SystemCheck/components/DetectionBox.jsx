@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React from "react";
 import checkImg from "../../../assets/images/tick-circle.svg";
 import issueImg from "../../../assets/images/danger.svg";
 
